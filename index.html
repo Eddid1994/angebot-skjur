@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>k&amp;einsocial ✕ skjur® — Google Ads &amp; Meta Ads Partnerschaft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161210;          /* warm near-black */
+    --ink-2:#3a332f;
+    --paper:#FAF9F5;        /* k&einsocial cream */
+    --paper-2:#F1EEE6;
+    --plum:#4F0147;         /* k&einsocial primary */
+    --plum-2:#6a1761;
+    --pink:#FF0A54;         /* k&einsocial accent */
+    --gold:#C8972E;         /* skjur warm gold */
+    --gold-deep:#856010;    /* skjur gold — text on light */
+    --gold-soft:#E7CE8C;    /* skjur gold — soft tint */
+    --line:rgba(22,18,16,.16);
+    --line-soft:rgba(22,18,16,.09);
+    --mono:ui-monospace,"SF Mono","Geist Mono",Menlo,Consolas,monospace;
+    --grotesk:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --serif:"Fraunces",Georgia,serif;
+    --maxw:1280px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--grotesk);
+    background:var(--paper);
+    color:var(--ink);
+    font-size:17px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+  @media(max-width:680px){.wrap{padding:0 22px}}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--pink);color:#fff}
+
+  /* ---- type helpers ---- */
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+  .serif-i{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+  .display{font-weight:800;letter-spacing:-.035em;line-height:.95}
+  .idx{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--plum)}
+  .ul-line{box-shadow:inset 0 -2px 0 0 var(--pink)}
+  .gold-line{box-shadow:inset 0 -2px 0 0 var(--gold)}
+
+  /* ===== NAV ===== */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(250,249,245,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .lock{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:18px}
+  .lock .amp{color:var(--pink)}
+  .lock .x{font-weight:500;opacity:.45;font-size:15px;transform:translateY(-1px)}
+  .lock .sk{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--gold-deep);letter-spacing:-.01em}
+  .lock .sk sup{font-size:.5em;top:-.7em}
+  .nav nav{display:flex;gap:26px;align-items:center}
+  .nav nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);transition:color .2s}
+  .nav nav a:hover{color:var(--ink)}
+  .nav .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+  @media(max-width:980px){.nav nav a{display:none}}
+
+  /* ===== HERO ===== */
+  .hero{padding:70px 0 0}
+  .hero .meta{display:flex;gap:26px;flex-wrap:wrap;color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:46px}
+  .hero h1{font-size:clamp(44px,8.4vw,104px)}
+  .hero h1 .blk{display:block}
+  .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+  .hero h1 .pink{color:var(--pink)}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;margin-top:52px;align-items:end}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+  .hero-lead{font-size:clamp(19px,2.3vw,24px);line-height:1.45;max-width:36ch;color:var(--ink)}
+  .hero-lead b{font-weight:800}
+  .spec{border-top:1px solid var(--ink)}
+  .spec .row{display:grid;grid-template-columns:112px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line-soft)}
+  .spec .row span:first-child{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
+  .spec .row span:last-child{font-weight:700;font-size:15.5px}
+  .spec .row .em{color:var(--gold-deep)}
+
+  /* marquee */
+  .marquee{margin-top:60px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden;background:var(--ink);color:var(--paper)}
+  .marquee .track{display:inline-flex;white-space:nowrap;will-change:transform;animation:scroll 38s linear infinite}
+  .marquee span{font-weight:800;letter-spacing:-.02em;font-size:clamp(20px,2.6vw,30px);padding:16px 0;display:inline-flex;align-items:center}
+  .marquee b{color:var(--gold);margin:0 26px;font-weight:800}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ===== PROOF STRIP ===== */
+  .proof{background:var(--ink);color:var(--paper)}
+  .proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .proof .cell{padding:40px 28px 44px;border-left:1px solid rgba(255,255,255,.14)}
+  .proof .cell:first-child{border-left:0;padding-left:0}
+  .proof .cell .n{font-weight:800;letter-spacing:-.04em;font-size:clamp(38px,5.4vw,64px);line-height:1}
+  .proof .cell .n .a{color:var(--gold)}
+  .proof .cell .l{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:14px;max-width:26ch}
+  @media(max-width:780px){.proof .wrap{grid-template-columns:1fr 1fr}.proof .cell{padding:30px 22px;border-left:1px solid rgba(255,255,255,.14)!important}.proof .cell:nth-child(odd){border-left:0!important;padding-left:0}}
+
+  /* ===== SECTION SHELL ===== */
+  section.blk{padding:clamp(78px,10vw,140px) 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline;margin-bottom:50px}
+  .sec-head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+  .sec-head .kick b{color:var(--pink)}
+  .sec-head h2{font-size:clamp(30px,5.2vw,66px);font-weight:800;letter-spacing:-.035em;line-height:.98;max-width:20ch;justify-self:start}
+  .sec-head h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
+  .lead-2{font-size:clamp(18px,2vw,21px);max-width:70ch;color:var(--ink-2);line-height:1.5}
+  .lead-2 b{color:var(--ink)}
+
+  /* services editorial list */
+  .svc{border-top:1px solid var(--ink);margin-top:48px}
+  .svc a.item{display:grid;grid-template-columns:64px 1.1fr 1fr auto;gap:24px;align-items:center;padding:30px 8px;border-bottom:1px solid var(--line);transition:padding .3s ease,background .3s ease;position:relative}
+  .svc a.item:hover{padding-left:24px;padding-right:0;background:linear-gradient(90deg,rgba(200,151,46,.12),transparent 70%)}
+  .svc .i-idx{font-family:var(--mono);font-size:12px;color:var(--ink-2);letter-spacing:.1em}
+  .svc .i-name{font-size:clamp(24px,3.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
+  .svc .i-name .pri{font-family:var(--mono);font-size:11px;letter-spacing:.12em;background:var(--gold);color:var(--ink);padding:4px 9px;border-radius:4px;vertical-align:middle;margin-left:12px;font-weight:600}
+  .svc .i-desc{color:var(--ink-2);font-size:15.5px;max-width:46ch}
+  .svc .i-arrow{justify-self:end;color:var(--ink);transition:transform .3s ease}
+  .svc a.item:hover .i-arrow{transform:translate(6px,-6px);color:var(--gold-deep)}
+  @media(max-width:820px){.svc a.item{grid-template-columns:40px 1fr;gap:8px 14px}.svc .i-desc{grid-column:2}.svc .i-arrow{display:none}}
+
+  /* clients */
+  .clients{border-top:1px solid var(--ink);border-left:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px}
+  .clients .c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 18px;min-height:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:7px;transition:.25s}
+  .clients .c .nm{font-weight:800;letter-spacing:-.01em;font-size:16.5px;color:var(--ink)}
+  .clients .c .sec{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+  .clients .c:hover{background:var(--plum)}
+  .clients .c:hover .nm{color:#fff}
+  .clients .c:hover .sec{color:var(--gold-soft)}
+  @media(max-width:820px){.clients{grid-template-columns:repeat(2,1fr)}}
+  .quote-stat{margin-top:50px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,3.6vw,42px);line-height:1.2;letter-spacing:-.02em;max-width:28ch}
+  .quote-stat .a{color:var(--pink)}
+  .quote-stat .b{color:var(--gold-deep)}
+  .note{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:24px}
+
+  /* channel split */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+  @media(max-width:880px){.split{grid-template-columns:1fr;gap:36px}}
+  .statement{font-size:clamp(26px,3.6vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:28px}
+  .statement em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--gold-deep)}
+  .arglist{list-style:none}
+  .arglist li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+  .arglist li .n{font-family:var(--mono);font-size:12px;color:var(--pink);letter-spacing:.1em;padding-top:3px}
+  .arglist li p{font-size:16px;color:var(--ink)}
+  .arglist li b{font-weight:800}
+  .panel{background:var(--ink);color:var(--paper);border-radius:6px;padding:38px 34px;position:relative;overflow:hidden}
+  .panel:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-120px;top:-120px;background:radial-gradient(circle,rgba(200,151,46,.30),transparent 65%)}
+  .panel h3{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:24px;position:relative;z-index:2}
+  .panel .pr{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,.14);position:relative;z-index:2}
+  .panel .pr:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+  .panel .pr .k{font-size:16px;font-weight:700}
+  .panel .pr .v{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--gold);text-align:right}
+
+  /* deep service grid (per channel) */
+  .svcgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--line);margin-top:46px}
+  @media(max-width:880px){.svcgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.svcgrid{grid-template-columns:1fr}}
+  .svcgrid .cardx{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 22px 30px}
+  .svcgrid .cardx .ci{font-family:var(--mono);font-size:11px;letter-spacing:.13em;color:var(--gold-deep)}
+  .svcgrid .cardx h4{font-size:17.5px;font-weight:800;letter-spacing:-.02em;margin:14px 0 8px}
+  .svcgrid .cardx p{color:var(--ink-2);font-size:14px;line-height:1.5}
+
+  /* approach steps */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);margin-top:48px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+  .stp{padding:42px 40px 44px;border-bottom:1px solid var(--line);position:relative}
+  .stp:first-child{border-right:1px solid var(--line)}
+  @media(max-width:860px){.stp:first-child{border-right:0}}
+  .stp .ghost{font-weight:800;font-size:clamp(70px,9vw,120px);letter-spacing:-.05em;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--line);margin-bottom:8px}
+  .stp .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  .stp .tag b{color:var(--pink)}
+  .stp.two .tag b{color:var(--gold-deep)}
+  .stp h3{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.03em;margin:10px 0 22px}
+  .stp ul{list-style:none}
+  .stp li{padding:11px 0 11px 26px;border-top:1px solid var(--line-soft);font-size:15.5px;color:var(--ink);position:relative}
+  .stp li:before{content:"";position:absolute;left:2px;top:18px;width:8px;height:8px;background:var(--pink);border-radius:1px}
+  .stp.two li:before{background:var(--gold)}
+  .stp li b{font-weight:800}
+
+  /* framework flow */
+  .fw{margin-top:52px;background:var(--plum);color:#fff;border-radius:6px;padding:clamp(30px,4vw,52px);position:relative;overflow:hidden}
+  .fw .kick{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .fw h3{font-size:clamp(22px,2.8vw,34px);font-weight:800;letter-spacing:-.03em;max-width:28ch}
+  .fw p{color:rgba(255,255,255,.82);max-width:70ch;margin-top:14px;font-size:16.5px}
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:18px;align-items:stretch;margin-top:40px}
+  @media(max-width:780px){.flow{grid-template-columns:1fr;gap:14px}.flow .ar{transform:rotate(90deg);justify-self:start;margin-left:18px}}
+  .node{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:24px}
+  .node .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .node h4{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:10px 0 8px}
+  .node p{color:rgba(255,255,255,.78);font-size:14px;margin:0}
+  .flow .ar{align-self:center;color:var(--gold);font-size:22px;font-weight:800}
+
+  /* roadmap note (channel expansion) */
+  .roadmap{margin-top:30px;border:1px solid var(--ink);border-radius:6px;padding:clamp(24px,3vw,34px);background:var(--paper-2);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  @media(max-width:820px){.roadmap{grid-template-columns:1fr;gap:16px}}
+  .roadmap .cg{font-weight:800;font-size:clamp(44px,6vw,76px);letter-spacing:-.05em;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--gold)}
+  .roadmap .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+  .roadmap h3{font-size:clamp(21px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;margin:8px 0 8px}
+  .roadmap p{color:var(--ink-2);font-size:15px;max-width:76ch}
+  .roadmap .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .roadmap .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--line);border-radius:5px;color:var(--ink)}
+
+  /* ===== GANTT ===== */
+  .plan-wrap{margin-top:46px;border:1px solid var(--ink);border-radius:6px;background:#fff;overflow-x:auto}
+  .gantt{min-width:840px;padding:8px 0}
+  .g-head{display:grid;grid-template-columns:300px repeat(12,1fr)}
+  .g-head .mh{grid-row:1;text-align:left;padding:16px 0 6px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);border-left:1px solid var(--line)}
+  .g-weeks{display:grid;grid-template-columns:300px repeat(12,1fr);border-bottom:1px solid var(--ink)}
+  .g-weeks .c0{padding:6px 12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-2);text-transform:uppercase}
+  .g-weeks span{font-family:var(--mono);font-size:9.5px;color:#a59ea6;text-align:center;padding:6px 0;border-left:1px solid var(--line-soft)}
+  .grow{display:grid;grid-template-columns:300px repeat(12,1fr);align-items:center;border-bottom:1px solid var(--line-soft)}
+  .grow:last-child{border-bottom:0}
+  .grow .t{font-size:13px;font-weight:700;color:var(--ink);padding:0 12px;display:flex;align-items:center;gap:9px;line-height:1.2}
+  .grow .t .pin{width:8px;height:8px;border-radius:2px;flex:none}
+  .gtrack{grid-column:2 / span 12;position:relative;height:44px}
+  .bar{position:absolute;top:12px;height:20px;border-radius:3px;display:flex;align-items:center;padding:0 9px;font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:#fff;white-space:nowrap;overflow:hidden}
+  .b-plum{background:var(--plum)}
+  .b-pink{background:var(--pink)}
+  .b-gold{background:var(--gold);color:var(--ink)}
+  .b-ink{background:var(--ink-2)}
+  .b-pinkS{background:#f3a9c4;color:var(--ink)}
+  .b-out{background:transparent;border:1.5px dashed var(--gold-deep);color:var(--gold-deep)}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:8px;vertical-align:0}
+  .plan-note{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-2);margin-top:16px;text-transform:uppercase}
+
+  /* ===== SUPPORT (plum) ===== */
+  .blk.dark{background:var(--plum);color:#fff;border-bottom:0}
+  .blk.dark .sec-head .kick{color:rgba(255,255,255,.7)}
+  .blk.dark .sec-head .kick b{color:var(--gold)}
+  .blk.dark .sec-head h2{color:#fff}
+  .blk.dark .lead-2{color:rgba(255,255,255,.82)}
+  .sup{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.22);margin-top:48px}
+  @media(max-width:820px){.sup{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.sup{grid-template-columns:1fr}}
+  .sup .s{padding:34px 26px 38px;border-bottom:1px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.22)}
+  .sup .s:nth-child(4n){border-right:0}
+  .sup .s .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--gold)}
+  .sup .s h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:18px 0 10px}
+  .sup .s p{color:rgba(255,255,255,.8);font-size:14.5px}
+
+  /* ===== PRICING ===== */
+  .price-top{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-top:10px}
+  @media(max-width:860px){.price-top{grid-template-columns:1fr;gap:20px}}
+  .bignum{font-weight:800;letter-spacing:-.05em;line-height:.85;font-size:clamp(60px,11vw,140px)}
+  .bignum .cur{font-size:.42em;vertical-align:.42em;color:var(--pink);letter-spacing:0}
+  .bignum .per{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:500;margin-top:10px}
+  .price-break{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase;text-align:right;line-height:1.9}
+  @media(max-width:860px){.price-break{text-align:left}}
+  .price-break b{color:var(--ink);font-weight:700}
+  .price-break .g{color:var(--gold-deep)}
+  .chan{border-top:1px solid var(--ink);margin-top:44px}
+  .chan .r{display:grid;grid-template-columns:130px 1fr auto;gap:24px;align-items:center;padding:18px 6px;border-bottom:1px solid var(--line)}
+  .chan .r .id{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--plum)}
+  .chan .r .sc{color:var(--ink-2);font-size:15px}
+  .chan .r .am{font-weight:800;font-size:18px;letter-spacing:-.02em}
+  .chan .r.muted .am{color:var(--gold-deep)}
+  .chan .tot{display:grid;grid-template-columns:130px 1fr auto;gap:24px;align-items:center;padding:22px 6px;background:var(--ink);color:#fff;border-radius:0 0 6px 6px;margin-top:-1px}
+  .chan .tot .id{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--gold)}
+  .chan .tot .sc{color:rgba(255,255,255,.7);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .chan .tot .am{font-weight:800;font-size:24px;color:#fff}
+  .chan .tot .am .pink{color:var(--pink)}
+  @media(max-width:680px){.chan .r,.chan .tot{grid-template-columns:90px 1fr;gap:8px 14px}.chan .r .am,.chan .tot .am{grid-column:2}}
+
+  .example{margin-top:28px;border:1px solid var(--gold);border-radius:6px;background:rgba(200,151,46,.07);padding:24px 26px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+  @media(max-width:680px){.example{grid-template-columns:1fr;gap:12px}}
+  .example .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+  .example .calc{font-size:16px;color:var(--ink);line-height:1.7}
+  .example .calc b{font-weight:800}
+  .example .big{font-weight:800;letter-spacing:-.03em;font-size:clamp(30px,4vw,44px);white-space:nowrap;text-align:right}
+  .example .big span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:500;margin-top:6px}
+  @media(max-width:680px){.example .big{text-align:left}}
+
+  /* risk-free entry test */
+  .entry{margin-top:28px;border:2px solid var(--plum);border-radius:8px;background:#fff;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:30px 34px 30px 38px;position:relative;overflow:hidden}
+  .entry:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--pink)}
+  @media(max-width:680px){.entry{grid-template-columns:1fr;gap:14px}}
+  .entry .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+  .entry h3{font-size:25px;font-weight:800;letter-spacing:-.02em;margin:8px 0 6px}
+  .entry p{color:var(--ink-2);font-size:14.5px;max-width:66ch}
+  .entry p b{color:var(--ink);font-weight:700}
+  .entry .amt{font-weight:800;letter-spacing:-.03em;font-size:clamp(30px,5vw,48px);white-space:nowrap;text-align:right;line-height:.9;color:var(--plum)}
+  .entry .amt span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:500;margin-top:8px}
+
+  .incl{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);margin-top:50px}
+  @media(max-width:680px){.incl{grid-template-columns:1fr}}
+  .incl div{padding:14px 6px 14px 30px;border-bottom:1px solid var(--line-soft);font-size:15px;position:relative}
+  .incl div:before{content:"—";position:absolute;left:4px;color:var(--gold-deep);font-weight:800}
+
+  .tier2{margin-top:30px;border:1px solid var(--ink);border-radius:8px;background:var(--paper-2);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:30px 34px}
+  @media(max-width:680px){.tier2{grid-template-columns:1fr;gap:14px}}
+  .tier2 .ph{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+  .tier2 h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:8px 0 6px}
+  .tier2 p{color:var(--ink-2);font-size:14.5px;max-width:68ch}
+  .tier2 .amt{font-weight:800;letter-spacing:-.03em;font-size:clamp(28px,4.6vw,46px);white-space:nowrap;text-align:right;line-height:.9}
+  .tier2 .amt span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:500;margin-top:8px}
+
+  .price-notes{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:40px}
+  @media(max-width:680px){.price-notes{grid-template-columns:1fr;gap:18px}}
+  .price-notes p{font-size:14.5px;color:var(--ink-2);line-height:1.55;border-left:2px solid var(--pink);padding-left:18px}
+  .price-notes p:nth-child(2){border-left-color:var(--gold)}
+  .price-notes p:nth-child(3){border-left-color:var(--plum)}
+  .price-notes b{color:var(--ink);font-weight:700}
+
+  /* ===== USP / P&L ===== */
+  .pnl-points{list-style:none;margin-top:8px}
+  .pnl-points li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+  .pnl-points li .n{font-family:var(--mono);font-size:12px;color:var(--gold-deep);letter-spacing:.1em;padding-top:3px}
+  .pnl-points li p{font-size:16px;color:var(--ink)}
+  .pnl-points li b{font-weight:800}
+
+  /* ===== FINAL CTA (gold) ===== */
+  .final{background:var(--gold);color:var(--ink);text-align:left;border-bottom:0}
+  .final h2{font-size:clamp(34px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:.95;max-width:20ch}
+  .final h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
+  .final .kick{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#5a4208;margin-bottom:24px}
+  .final p{font-size:19px;max-width:58ch;margin-top:22px;color:#3a2c06}
+  .next{display:flex;gap:0;flex-wrap:wrap;margin-top:48px;border-top:1px solid rgba(22,18,16,.28)}
+  .next .ns{flex:1 1 220px;padding:24px 22px;border-right:1px solid rgba(22,18,16,.28)}
+  .next .ns:last-child{border-right:0}
+  .next .ns .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--plum)}
+  .next .ns h4{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-top:12px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:42px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:16px 26px;border-radius:3px;transition:.2s;border:1px solid var(--ink)}
+  .btn.solid{background:var(--ink);color:var(--paper)}
+  .btn.solid:hover{background:var(--plum);border-color:var(--plum)}
+  .btn.out:hover{background:var(--ink);color:var(--gold)}
+
+  /* footer */
+  footer{background:var(--ink);color:rgba(255,255,255,.62)}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:30px 40px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  footer .lock{color:#fff;font-family:var(--grotesk);font-size:15px;text-transform:none;letter-spacing:-.02em}
+  footer a{color:var(--gold)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media print{
+    header.nav{position:static}.marquee{display:none}.rv{opacity:1!important;transform:none!important}
+    .btn,.cta-row,.next{display:none!important}
+    section.blk{padding:30px 0}
+    .proof,.panel,.blk.dark,.chan .tot,.fw,.final{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <div class="lock">k<span class="amp">&amp;</span>einsocial <span class="x">✕</span> <span class="sk">skjur<sup>®</sup></span></div>
+    <nav>
+      <a href="#partner">Partner</a>
+      <a href="#sektoren">Sektoren</a>
+      <a href="#google">Google</a>
+      <a href="#meta">Meta</a>
+      <a href="#vorgehen">Vorgehen</a>
+      <a href="#plan">Plan</a>
+      <a href="#investment">Investment</a>
+    </nav>
+    <span class="tag">Angebot — Juni 2026</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="meta mono rv">
+      <span>Vertrauliches Angebot</span>
+      <span>Google Ads &amp; Meta Ads · DTC E-Commerce</span>
+      <span>Für das skjur-Team</span>
+    </div>
+    <h1 class="display rv">
+      <span class="blk">Google &amp; Meta,</span>
+      <span class="blk">die skjurs DTC <em class="pink">profitabel</em> skalieren.</span>
+    </h1>
+    <div class="hero-grid">
+      <p class="hero-lead rv">Wir übernehmen skjurs <b>Google Ads &amp; Meta Ads</b> und optimieren das <b>Media Buying</b> mit einem konsequenten Testsystem — Bottom-Funnel zuerst, profitabel skaliert. Nicht nur sichtbar, sondern <b>profitabel</b>.</p>
+      <div class="spec rv">
+        <div class="row"><span>Kunde</span><span>skjur® · by URSAPHARM</span></div>
+        <div class="row"><span>Markt</span><span><span class="em">DTC E-Commerce · Skincare</span></span></div>
+        <div class="row"><span>Kanäle</span><span>Google Ads + Meta Ads</span></div>
+        <div class="row"><span>Modell</span><span>€3.500 / Kanal + 5% Spend</span></div>
+        <div class="row"><span>Einstieg</span><span class="em">1-Monats-Test €1.500 → Pilot</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Google Ads<b>✳</b>Meta Ads<b>✳</b>Native Ads · Taboola &amp; Outbrain<b>✳</b>Performance Max &amp; Shopping<b>✳</b>Advantage+ Shopping<b>✳</b>Media-Buying-Optimierung<b>✳</b>Bottom-Funnel zuerst · profitabel<b>✳</b>Dermokosmetik &amp; Beauty<b>✳</b></span>
+      <span>Google Ads<b>✳</b>Meta Ads<b>✳</b>Native Ads · Taboola &amp; Outbrain<b>✳</b>Performance Max &amp; Shopping<b>✳</b>Advantage+ Shopping<b>✳</b>Media-Buying-Optimierung<b>✳</b>Bottom-Funnel zuerst · profitabel<b>✳</b>Dermokosmetik &amp; Beauty<b>✳</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="cell"><div class="n">30<span class="a">+</span></div><div class="l">Marken auf Meta, Google &amp; TikTok skaliert</div></div>
+    <div class="cell"><div class="n">€3M<span class="a">+</span></div><div class="l">Jährliches Werbebudget unter Management</div></div>
+    <div class="cell"><div class="n">↓<span class="a">CPA</span></div><div class="l">Fokus auf echte Profitabilität — nicht auf Vanity-ROAS</div></div>
+    <div class="cell"><div class="n">7<span class="a">/7</span></div><div class="l">Tägliche Optimierung &amp; Skalierung am Wochenende</div></div>
+  </div>
+</section>
+
+<!-- 01 PARTNER -->
+<section class="blk" id="partner">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(01)</b> &nbsp;Der Partner</div>
+      <h2>Ein Performance-Partner, <em>keine</em> klassische Agentur.</h2>
+    </div>
+    <p class="lead-2 rv">k&amp;einsocial übernimmt Werbekonten, baut sie neu auf und <b>optimiert das Media Buying</b> mit einem disziplinierten, testgetriebenen System. Wir steuern bereits <b>über €3 Mio. jährliches Werbebudget</b> für 30+ Marken auf Meta, Google &amp; TikTok. Für skjur richten wir genau dieses Playbook auf die zwei Kanäle, die DTC-Skincare am schnellsten bewegen — <b>Google &amp; Meta</b> — unter einer gemeinsamen Strategie. Profitabilität statt Reichweite um der Reichweite willen.</p>
+
+    <div class="svc rv">
+      <a class="item" href="#google">
+        <span class="i-idx">A/01</span>
+        <span class="i-name">Google Ads<span class="pri">Primär</span></span>
+        <span class="i-desc">Search, Performance Max, Shopping &amp; Demand Gen — wir fangen kaufbereite Nachfrage ab und verteidigen die Marke.</span>
+        <span class="i-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a class="item" href="#meta">
+        <span class="i-idx">A/02</span>
+        <span class="i-name">Meta Ads<span class="pri">Primär</span></span>
+        <span class="i-desc">Bottom-Funnel zuerst, Advantage+ Shopping &amp; Retargeting — profitabel ernten, dann gezielt nach oben bauen.</span>
+        <span class="i-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a class="item" href="#meta">
+        <span class="i-idx">A/03</span>
+        <span class="i-name">Shopify-CRO &amp; Tracking</span>
+        <span class="i-desc">Conversion-Optimierung, Potenzial-Identifikation im Shop &amp; sauberes Tracking (GA4, CAPI) — kein Web-Development.</span>
+        <span class="i-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 SEKTOREN -->
+<section class="blk" id="sektoren">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(02)</b> &nbsp;Branchen-Erfahrung</div>
+      <h2>Wir kennen <em>Beauty</em>, Skincare &amp; Health.</h2>
+    </div>
+    <p class="lead-2 rv">Ihr habt nach unserer Erfahrung in <b>Dermokosmetik, Skincare, Beauty, Wellness und Healthcare</b> gefragt — berechtigt. Eine Auswahl an Marken, die wir auf Meta, Google &amp; TikTok skalieren, von Beauty und Health bis zu Challenger-DTC und großen Namen, mit monatlichen Werbebudgets bis €40K.</p>
+    <div class="clients rv">
+      <div class="c"><span class="nm">Dr. Emi Arpa</span><span class="sec">Ästhetik · Skincare</span></div>
+      <div class="c"><span class="nm">German Dream Nails</span><span class="sec">Beauty</span></div>
+      <div class="c"><span class="nm">Fielmann</span><span class="sec">Optik · Health</span></div>
+      <div class="c"><span class="nm">Ironmaxx</span><span class="sec">Wellness · Nutrition</span></div>
+      <div class="c"><span class="nm">Blume Ideal</span><span class="sec">DTC E-Commerce</span></div>
+      <div class="c"><span class="nm">Bruno Banani</span><span class="sec">Lifestyle</span></div>
+      <div class="c"><span class="nm">Schiesser</span><span class="sec">Heritage Retail</span></div>
+      <div class="c"><span class="nm">SIGG Switzerland</span><span class="sec">DTC Retail</span></div>
+      <div class="c"><span class="nm">Johnny Urban</span><span class="sec">DTC E-Commerce</span></div>
+      <div class="c"><span class="nm">Vonmählen</span><span class="sec">Accessoires DTC</span></div>
+      <div class="c"><span class="nm">Larkson</span><span class="sec">DTC E-Commerce</span></div>
+      <div class="c"><span class="nm">OAK25</span><span class="sec">DTC E-Commerce</span></div>
+    </div>
+    <p class="quote-stat rv"><span class="b">€3 Mio.+ jährliches Werbebudget.</span> 30+ Marken übernommen &amp; skaliert. <span class="a">Profitabel — nicht nur Vanity-ROAS.</span></p>
+    <p class="note rv">Ausgewählte Marken, mit denen k&amp;einsocial arbeitet &amp; gearbeitet hat — Beauty, Health &amp; DTC zuerst</p>
+  </div>
+</section>
+
+<!-- 03 GOOGLE ADS -->
+<section class="blk" id="google">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(03)</b> &nbsp;Kanal · Google Ads</div>
+      <h2>Die Nachfrage abfangen, die skjur <em>ohnehin</em> erzeugt.</h2>
+    </div>
+    <div class="split">
+      <div class="rv">
+        <p class="statement">Google ist der Ort, an dem Kaufabsicht zu Kund:innen <em>wird</em>.</p>
+        <ul class="arglist">
+          <li><span class="n">01</span><p>Kaufbereite Nachfrage gibt es längst — nach <b>„vitamin c serum"</b>, <b>„augencreme gegen falten"</b>, <b>„sonnenschutz gesicht"</b> und mehr. Wir fangen diese Menschen genau im Moment der Kaufabsicht ab.</p></li>
+          <li><span class="n">02</span><p><b>Performance Max &amp; Shopping</b> bringen eure Produkte — mit Preis und Bewertungen — direkt vor die Käufer:innen, gespeist aus einem Merchant Center, das auf Conversion gebaut ist.</p></li>
+          <li><span class="n">03</span><p><b>Markenschutz</b>: eigene Markenbegriffe besetzen, bevor Händler und Marktplätze auf „skjur" bieten und die günstigsten Verkäufe abschöpfen.</p></li>
+          <li><span class="n">04</span><p>Sobald die Conversion-Daten sauber sind, skaliert <b>Target-ROAS-Bidding</b> das Budget profitabel — Marge geschützt, während das Volumen wächst.</p></li>
+        </ul>
+      </div>
+      <div class="panel rv">
+        <h3>Was wir auf Google fahren</h3>
+        <div class="pr"><span class="k">Search — Brand + Non-Brand</span><span class="v">Intent-Abfang</span></div>
+        <div class="pr"><span class="k">Performance Max</span><span class="v">Shopping-getrieben</span></div>
+        <div class="pr"><span class="k">Shopping &amp; Feed</span><span class="v">Merchant Center</span></div>
+        <div class="pr"><span class="k">Demand Gen &amp; YouTube</span><span class="v">Marke &amp; Cold Reach</span></div>
+        <div class="pr"><span class="k">Bidding &amp; Pacing</span><span class="v">tROAS · Budgets</span></div>
+      </div>
+    </div>
+
+    <div class="svcgrid rv">
+      <div class="cardx"><div class="ci">G·01</div><h4>Audit &amp; Neuaufbau</h4><p>Vollständiges Konto-Audit, dann sauberer Neuaufbau — Kampagnen-Hierarchie, Benennung, Conversion-Ziele und Budgets, strukturiert für Tests und Skalierung.</p></div>
+      <div class="cardx"><div class="ci">G·02</div><h4>Search-Kampagnen</h4><p>Brand, Generic und Competitor Search über eure Hero-Kategorien — Seren, Cremes, Augenpflege, Reinigung, SPF — mit eng gefassten Anzeigengruppen.</p></div>
+      <div class="cardx"><div class="ci">G·03</div><h4>Performance Max</h4><p>Asset-Gruppen nach Produktlinie und Routine — aus euren Brand-Assets — mit unseren Audience-Signalen. Googles stärkstes Format für DTC-Skincare.</p></div>
+      <div class="cardx"><div class="ci">G·04</div><h4>Shopping &amp; Feed</h4><p>Merchant-Center-Gesundheit, GTIN- &amp; Attribut-Fixes, Feed-Regeln, Custom Labels und Aktionen — euer Katalog als Verkaufsmaschine.</p></div>
+      <div class="cardx"><div class="ci">G·05</div><h4>Demand Gen &amp; YouTube</h4><p>Nachfrage-Erzeugung am oberen Funnel auf Basis eurer Brand-Assets — als Zufuhr für die kaufbereite Suche darunter. Nur, wenn es profitabel trägt.</p></div>
+      <div class="cardx"><div class="ci">G·06</div><h4>Search-Term-Hygiene</h4><p>Laufendes Negative-Keyword- und Suchbegriff-Mining — schneidet Streuverluste weg und schärft Woche für Woche die Relevanz.</p></div>
+      <div class="cardx"><div class="ci">G·07</div><h4>Geo · Device · Dayparting</h4><p>Gebots- &amp; Budget-Steuerung nach Region, Gerät und Tageszeit — Budget dorthin, wo und wann skjur am besten konvertiert.</p></div>
+      <div class="cardx"><div class="ci">G·08</div><h4>Profitabel skalieren</h4><p>Target-ROAS-Bidding, Budget-Pacing und strukturiertes Skalieren der Gewinner — mehr Budget, ohne die Effizienz zu brechen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 META ADS -->
+<section class="blk" id="meta">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(04)</b> &nbsp;Kanal · Meta Ads</div>
+      <h2>Erst profitabel ernten. <em>Dann</em> nach oben bauen.</h2>
+    </div>
+    <div class="split">
+      <div class="rv">
+        <p class="statement">Wir starten unten im Funnel — wo es am <em>profitabelsten</em> ist.</p>
+        <ul class="arglist">
+          <li><span class="n">01</span><p>Wir bauen den Funnel <b>von unten</b>: Retargeting und kaufbereite Audiences zuerst, wo das Budget am schnellsten profitabel zurückkommt — erst wenn das trägt, bauen wir nach oben.</p></li>
+          <li><span class="n">02</span><p><b>Advantage+ Shopping</b> skaliert die Neukundengewinnung profitabel, sobald Pixel &amp; CAPI sauberes Signal bekommen — der Arbeitsmotor für DTC.</p></li>
+          <li><span class="n">03</span><p><b>Full-Funnel nur, wenn es Sinn ergibt.</b> Den oberen Funnel öffnen wir gezielt, wenn die unteren Stufen profitabel laufen — nicht aus Prinzip.</p></li>
+          <li><span class="n">04</span><p>Wir optimieren das <b>Media Buying</b>: systematisches Testen und Skalieren nur der Gewinner. Das Test-Volumen richtet sich nach Budget — kein unprofitabel verbranntes Geld. <b>Die Creatives stellt ihr</b>; wir steuern Einsatz, Test &amp; Skalierung.</p></li>
+        </ul>
+      </div>
+      <div class="panel rv">
+        <h3>Unser Meta-Arbeitsrhythmus</h3>
+        <div class="pr"><span class="k">Start</span><span class="v">Bottom-Funnel zuerst</span></div>
+        <div class="pr"><span class="k">Test-Volumen</span><span class="v">Budgetabhängig</span></div>
+        <div class="pr"><span class="k">Optimierung &amp; Checks</span><span class="v">Täglich</span></div>
+        <div class="pr"><span class="k">Skalierung</span><span class="v">Nur Gewinner · inkl. WE</span></div>
+        <div class="pr"><span class="k">Creatives</span><span class="v">Ihr liefert · wir steuern</span></div>
+      </div>
+    </div>
+
+    <div class="svcgrid rv">
+      <div class="cardx"><div class="ci">M·01</div><h4>Konto- &amp; Pixel-Neuaufbau</h4><p>Audit und Neuaufbau von Werbekonto, Pixel und Conversions API — saubere Events, damit der Algorithmus auf echte Käufe optimiert.</p></div>
+      <div class="cardx"><div class="ci">M·02</div><h4>Bottom-Funnel zuerst</h4><p>Wir bauen den Funnel von unten: Retargeting &amp; kaufbereite Audiences zuerst. Der obere Funnel folgt erst, wenn die profitablen Stufen tragen.</p></div>
+      <div class="cardx"><div class="ci">M·03</div><h4>Advantage+ Shopping</h4><p>AAS-Kampagnen als profitabler Akquise-Kern, justiert mit den richtigen Signalen, Budgets und Rotation der von euch gelieferten Creatives.</p></div>
+      <div class="cardx"><div class="ci">M·04</div><h4>Media-Buying &amp; Creative-Testing</h4><p>Wir strukturieren das systematische Testen von Angles &amp; Formaten und skalieren nur die Gewinner — Volumen je nach Budget. Die Creatives liefert ihr; wir machen das Media Buying.</p></div>
+      <div class="cardx"><div class="ci">M·05</div><h4>Katalog &amp; DPA</h4><p>Produktkatalog &amp; Dynamic Product Ads, damit Browser und Warenkorb-Abbrecher genau die skjur-Produkte sehen, die sie angesehen haben.</p></div>
+      <div class="cardx"><div class="ci">M·06</div><h4>Audience-Strategie</h4><p>Lookalikes, Interessen, Custom &amp; Retention-Audiences mit sauberen Ausschlüssen — die richtige Botschaft an die richtigen Käufer:innen.</p></div>
+      <div class="cardx"><div class="ci">M·07</div><h4>Retargeting &amp; Lifecycle</h4><p>Besucher-, Warenkorb- und Kund:innen-Retargeting, das Wiederkäufe hebt — der profitable Kern, von dem aus wir nach oben skalieren.</p></div>
+      <div class="cardx"><div class="ci">M·08</div><h4>Shopify-CRO &amp; Potenziale</h4><p>Wir bringen unsere Shopify-Expertise ein: Conversion-Optimierung und Potenzial-Identifikation im Shop — wir zeigen, wo Umsatz liegen bleibt. <b>Kein Web-Development.</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 VORGEHEN -->
+<section class="blk" id="vorgehen">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(05)</b> &nbsp;Das Vorgehen</div>
+      <h2>Übernehmen. Bottom-Funnel aufbauen. <em>Profitabel</em> skalieren.</h2>
+    </div>
+    <p class="lead-2 rv">Zwei klare Schritte über den 90-Tage-Pilot — eine Foundation-Phase, die die Konten sauber und messbar macht, dann eine Test-&amp;-Scale-Phase, die <b>unten im Funnel</b> startet, profitable Gewinner findet und sich von dort nach oben baut. <b>Media-Buying-Optimierung</b> und wöchentliche Strategie laufen durchgehend; das Test-Volumen richtet sich nach Budget — wir verbrennen kein unprofitables Budget.</p>
+
+    <div class="steps rv">
+      <div class="stp one">
+        <div class="ghost">01</div>
+        <div class="tag"><b>Schritt 01</b> — Woche 1–4 · Foundation</div>
+        <h3>Audit &amp; Neuaufbau</h3>
+        <ul>
+          <li>Übernahme der <b>Google- &amp; Meta-Konten</b> &amp; Zugänge</li>
+          <li>Tracking fixen — <b>GA4, Pixel &amp; Conversions API</b></li>
+          <li>Konto- &amp; Kampagnenstruktur auf beiden Kanälen neu aufbauen</li>
+          <li>Merchant-Center-Feed &amp; Meta-Katalog sauber aufsetzen</li>
+          <li>Performance &amp; Shopify-Setup baselinen, Ziele vereinbaren</li>
+          <li><b>Bottom-Funnel-Kampagnen</b> live in ~2 Wochen</li>
+        </ul>
+      </div>
+      <div class="stp two">
+        <div class="ghost">02</div>
+        <div class="tag"><b>Schritt 02</b> — Woche 3–12 · Test &amp; Scale</div>
+        <h3>Profitabel ernten &amp; ausbauen</h3>
+        <ul>
+          <li><b>Media-Buying-Optimierung</b> — strukturiertes Testen, Volumen je nach Budget</li>
+          <li><b>Bottom-Funnel zuerst</b> — dann nach oben, wenn profitabel</li>
+          <li>Nur Gewinner skalieren: <b>tROAS &amp; Cost Caps</b>, Marge geschützt</li>
+          <li>Retargeting- &amp; Lifecycle-Flows live</li>
+          <li><b>Shopify-CRO</b>: Conversion-Potenziale identifizieren (kein Web-Dev)</li>
+          <li>Wöchentliches Reporting + wöchentlicher Strategie-Call</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fw rv">
+      <div class="kick">Die Media-Buying-Logik — läuft auf beiden Kanälen</div>
+      <h3>E-Commerce-Performance auf Basis echter Zahlen</h3>
+      <p>Wir raten nicht. Wir optimieren das Media Buying mit einem disziplinierten Testsystem und lassen echte Performance-Daten entscheiden, was getestet, was pausiert wird und wohin das Budget als Nächstes fließt — immer mit Blick auf Profitabilität, nie auf unnötig verbranntes Budget.</p>
+      <div class="flow">
+        <div class="node"><div class="ph">Phase 1</div><h4>Profitabel testen</h4><p>Bottom-Funnel &amp; Angles budgetbewusst testen — saubere, günstige Reads, kein unprofitabel verbranntes Budget.</p></div>
+        <div class="ar">→</div>
+        <div class="node"><div class="ph">Phase 2</div><h4>Gewinner konsolidieren</h4><p>Bewährte Gewinner in CBO &amp; Performance Max überführen. Der Algorithmus schiebt Budget zu den besten Performern.</p></div>
+        <div class="ar">→</div>
+        <div class="node"><div class="ph">Phase 3</div><h4>Skalieren — Caps &amp; tROAS</h4><p>Budget skalieren und dabei Effizienz schützen, mit Cost Caps und Target-ROAS. Gewinn, nicht Vanity.</p></div>
+      </div>
+    </div>
+
+    <div class="roadmap rv">
+      <div class="cg">+</div>
+      <div>
+        <div class="ph">Über den Piloten hinaus · Ein System</div>
+        <h3>Weitere Kanäle &amp; Märkte — wenn ihr bereit seid</h3>
+        <p>Dieses Angebot bleibt bewusst auf die zwei Kanäle fokussiert, die am schnellsten Wirkung zeigen — <b>Google &amp; Meta</b> — um das System in 90 Tagen profitabel zu beweisen. Sobald sie tragen, erweitern wir dasselbe Betriebssystem: weitere <b>Kanäle</b> (Native Ads über Taboola &amp; Outbrain, TikTok, CRM &amp; E-Mail) oder weitere <b>Märkte</b>. SEO &amp; Organic begleiten wir beratend — die Umsetzung liegt nicht bei uns.</p>
+        <div class="chips">
+          <span class="chip">Native Ads · Taboola/Outbrain</span>
+          <span class="chip">TikTok Ads</span>
+          <span class="chip">CRM &amp; E-Mail</span>
+          <span class="chip">Weitere Märkte</span>
+          <span class="chip">SEO (beratend)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 PLAN / GANTT -->
+<section class="blk" id="plan">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(06)</b> &nbsp;Der Plan</div>
+      <h2>90 Tage: vom Bottom-Funnel zur profitablen Skalierung.</h2>
+    </div>
+    <p class="lead-2 rv">Wir starten unten im Funnel — wo es am profitabelsten ist — und bauen nach oben aus, sobald es trägt. Media-Buying-Optimierung und Reporting laufen durchgehend; das Test-Volumen richtet sich nach Budget.</p>
+
+    <div class="plan-wrap rv">
+      <div class="gantt">
+        <div class="g-head">
+          <div></div>
+          <div class="mh" style="grid-column:2 / span 4">Monat 01</div>
+          <div class="mh" style="grid-column:6 / span 4">Monat 02</div>
+          <div class="mh" style="grid-column:10 / span 4">Monat 03</div>
+        </div>
+        <div class="g-weeks">
+          <div class="c0">Arbeitspaket</div>
+          <span>W1</span><span>W2</span><span>W3</span><span>W4</span>
+          <span>W5</span><span>W6</span><span>W7</span><span>W8</span>
+          <span>W9</span><span>W10</span><span>W11</span><span>W12</span>
+        </div>
+
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--plum)"></span>Onboarding, Zugänge &amp; Tracking / CAPI</div><div class="gtrack"><div class="bar b-plum" style="left:0%;width:16.667%">W1–2</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--plum)"></span>Konto-Neuaufbau — Google + Meta</div><div class="gtrack"><div class="bar b-plum" style="left:8.333%;width:25%">W2–4</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--plum)"></span>Shopping-Feed &amp; Meta-Katalog</div><div class="gtrack"><div class="bar b-plum" style="left:8.333%;width:25%">W2–4</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--pink)"></span>Bottom-Funnel aufbauen (Retargeting + kaufbereit)</div><div class="gtrack"><div class="bar b-pink" style="left:8.333%;width:41.667%">W2–6 · profitabler Kern zuerst</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--pink)"></span>Media-Buying-Optimierung &amp; Testing</div><div class="gtrack"><div class="bar b-pink" style="left:16.667%;width:83.333%">W3–12 · budgetabhängig</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:#f3a9c4"></span>Funnel nach oben ausbauen (wenn profitabel)</div><div class="gtrack"><div class="bar b-pinkS" style="left:41.667%;width:58.333%">W6–12</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--plum)"></span>Gewinner konsolidieren → CBO / PMax</div><div class="gtrack"><div class="bar b-plum" style="left:41.667%;width:41.667%">W6–10</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--gold)"></span>Skalieren — tROAS &amp; Cost Caps</div><div class="gtrack"><div class="bar b-gold" style="left:58.333%;width:41.667%">W8–12</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--ink-2)"></span>Shopify-CRO &amp; Potenzial-Identifikation</div><div class="gtrack"><div class="bar b-ink" style="left:16.667%;width:83.333%">W3–12 · kein Web-Dev</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:transparent;border:1.5px dashed var(--gold-deep)"></span>Wöchentl. Reporting &amp; Strategie-Calls</div><div class="gtrack"><div class="bar b-out" style="left:8.333%;width:91.667%">Durchgehend · wöchentlich</div></div></div>
+        <div class="grow"><div class="t"><span class="pin" style="background:var(--gold)"></span>Monats-3-Review &amp; Skalierungs-Roadmap</div><div class="gtrack"><div class="bar b-gold" style="left:83.333%;width:16.667%">W11–12</div></div></div>
+      </div>
+    </div>
+    <div class="legend rv">
+      <span><i style="background:var(--plum)"></i>Setup &amp; Aufbau</span>
+      <span><i style="background:var(--pink)"></i>Bottom-Funnel · Media Buying</span>
+      <span><i style="background:#f3a9c4"></i>Funnel-Ausbau (wenn profitabel)</span>
+      <span><i style="background:var(--gold)"></i>Skalierung &amp; Review</span>
+      <span><i style="background:var(--ink-2)"></i>Shopify-CRO</span>
+      <span><i style="background:transparent;border:1.5px dashed var(--gold-deep)"></i>Reporting (durchgehend)</span>
+    </div>
+    <p class="plan-note rv">Indikativ — passt sich an Zugangs-Tempo, Budget &amp; Datenvolumen an. Wir bauen zuerst den profitablen Bottom-Funnel auf und erweitern nach oben, sobald es trägt. Das Test-Volumen richtet sich nach Budget — wir verbrennen kein unprofitables Budget.</p>
+  </div>
+</section>
+
+<!-- 07 SUPPORT -->
+<section class="blk dark" id="support">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(07)</b> &nbsp;Wie wir arbeiten</div>
+      <h2>Jeden Tag erreichbar. <em>Skalierung</em> am Wochenende.</h2>
+    </div>
+    <p class="lead-2 rv">Performance pausiert nicht am Samstag — wir auch nicht. Ihr bekommt einen Partner, der skjurs Konten wie die eigenen behandelt, jeden Tag der Woche.</p>
+    <div class="sup rv">
+      <div class="s"><div class="n">01</div><h3>Tägliche Erreichbarkeit</h3><p>Direkte Leitung zu eurem Buyer per Slack / WhatsApp. Schnelle Antworten, keine Account-Manager-Mauer.</p></div>
+      <div class="s"><div class="n">02</div><h3>Wochenend-Skalierung</h3><p>Wir überwachen und skalieren laufende Gewinner am Wochenende, wenn CPMs und Kaufabsicht oft kippen.</p></div>
+      <div class="s"><div class="n">03</div><h3>Markt-natives Copy</h3><p>Ad-Copy und Saisonalität passend zum Markt — Black Friday, Weihnachtsgeschäft, Frühjahr — fest im Kalender.</p></div>
+      <div class="s"><div class="n">04</div><h3>Senior, nicht Junior</h3><p>Ein Senior-Buyer auf dem Account, proaktive Hinweise, Priority-Response — nie an Praktikant:innen abgegeben.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 INVESTMENT -->
+<section class="blk" id="investment">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kick"><b>(08)</b> &nbsp;Investment</div>
+      <h2>Klein testen. <em>Dann</em> profitabel skalieren.</h2>
+    </div>
+
+    <div class="entry rv">
+      <div>
+        <div class="ph">Risikofreier Einstieg · ohne Vertragsbindung</div>
+        <h3>1-Monats-Test — €1.500</h3>
+        <p>Lieber klein starten? Wir testen einen Monat lang einen Kanal an — z.&nbsp;B. <b>Native Ads über Taboola &amp; Outbrain</b>. <b>Klappt's</b>, springen wir auf das reguläre Modell (€3.500 / Kanal). <b>Klappt's nicht</b>, endet es hier — keine Vertragsbindung, kein Risiko.</p>
+      </div>
+      <div class="amt">€1.500<span>einmalig · 1 Monat · kein Lock-in</span></div>
+    </div>
+
+    <div class="price-top rv" style="margin-top:54px">
+      <div class="bignum"><span class="cur">€</span>7.000<span class="per">Basis-Retainer / Monat — Google + Meta</span></div>
+      <div class="price-break">
+        2 Kanäle <b>×</b> €3.500<br>pro Kanal / Monat<br>
+        <span class="g">+ 5% des gesteuerten Werbebudgets</span><br>
+        <span class="g">€1.900 einmaliges Setup</span>
+      </div>
+    </div>
+
+    <div class="chan rv">
+      <div class="r"><span class="id">GO · Google</span><span class="sc">Full Management · Search, PMax, Shopping, Skalierung</span><span class="am">€3.500</span></div>
+      <div class="r"><span class="id">ME · Meta</span><span class="sc">Full Management · AAS, Bottom-Funnel, Media Buying, Skalierung</span><span class="am">€3.500</span></div>
+      <div class="r muted"><span class="id">% · Spend-Share</span><span class="sc">5% des monatlichen Werbebudgets, das wir steuern — richtet uns auf profitable Skalierung aus</span><span class="am">+5%</span></div>
+      <div class="r muted"><span class="id">⚙ · Setup</span><span class="sc">Einmalig — Audit, Tracking/CAPI, Feed &amp; Katalog, Neuaufbau, Baselining</span><span class="am">€1.900</span></div>
+      <div class="tot"><span class="id">Monatliche Basis</span><span class="sc">2 × Kanal · 90-Tage-Pilot</span><span class="am">€7.000 <span class="pink">/Mo</span> + 5%</span></div>
+    </div>
+
+    <div class="example rv">
+      <div>
+        <div class="ph">Rechenbeispiel</div>
+        <div class="calc">Bei <b>€20.000/Mo</b> gesteuertem Werbebudget:<br>€7.000 Basis + <b>€1.000</b> (5% Share) = <b>€8.000/Mo</b>.<br>Plus €1.900 einmalig. Das Werbebudget zahlt skjur direkt.</div>
+      </div>
+      <div class="big">€8.000<span>/ Monat, Management gesamt</span></div>
+    </div>
+
+    <div class="incl rv">
+      <div>Dedizierter Senior-Media-Buyer auf beiden Kanälen</div>
+      <div>Vollständige Konto-Übernahme &amp; Neuaufbau (Google + Meta)</div>
+      <div>Media-Buying-Optimierung als Kern-Service</div>
+      <div>GA4-, Pixel- &amp; Conversions-API-Tracking</div>
+      <div>Merchant-Center-Feed &amp; Meta-Katalog-Management</div>
+      <div>Performance Max &amp; Advantage+ Shopping</div>
+      <div>Systematisches Creative-Testing (Creatives stellt ihr) — Volumen budgetabhängig</div>
+      <div>Funnel-Aufbau von unten nach oben (Bottom-Funnel zuerst)</div>
+      <div>tROAS- &amp; Cost-Cap-Skalierung der Gewinner</div>
+      <div>Shopify-CRO-Beratung &amp; Potenzial-Identifikation (kein Web-Dev)</div>
+      <div>Markt-natives Ad-Copy &amp; lokale Saisonalität</div>
+      <div>Wöchentliches Reporting + wöchentlicher Strategie-Call</div>
+      <div>Slack / WhatsApp Premium-Support</div>
+    </div>
+
+    <div class="tier2 rv">
+      <div>
+        <div class="ph">Optional · wenn der Markt trägt</div>
+        <h3>Erweiterung: weitere Kanäle oder Märkte</h3>
+        <p>Sobald Google &amp; Meta tragen, skalieren wir dasselbe System weiter — auf weitere <b>Kanäle</b> (Native Ads über Taboola &amp; Outbrain, TikTok, CRM &amp; E-Mail) oder weitere <b>Märkte</b>. SEO &amp; Organic begleiten wir beratend, führen wir aber nicht selbst aus.</p>
+      </div>
+      <div class="amt">€3.500<span>pro Kanal / Markt · pro Monat</span></div>
+    </div>
+
+    <div class="price-notes rv">
+      <p><b>Das Werbebudget ist separat.</b> Das an Google &amp; Meta gezahlte Budget rechnet skjur direkt ab — nie mit Aufschlag. Das Startbudget legen wir gemeinsam im Onboarding fest.</p>
+      <p><b>Der 5%-Spend-Share richtet uns auf euch aus.</b> Wir verdienen nur mehr, wenn wir mehr Budget profitabel einsetzen — unser Anreiz ist effiziente Skalierung, nicht abgerechnete Stunden.</p>
+      <p><b>Test ohne Risiko, dann Pilot.</b> Start mit dem 1-Monats-Test (€1.500) ohne Bindung — oder direkt in den 90-Tage-Pilot. Danach monatlich weiter oder verlängern, kein langes Lock-in. Angebot gültig bis <b>10. Juli 2026</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="blk final" id="contact">
+  <div class="wrap">
+    <div class="kick rv">Los geht's</div>
+    <h2 class="rv">Google &amp; Meta profitabel skalieren. <em>Start</em> ohne Risiko.</h2>
+    <p class="rv">Mit dem 1-Monats-Test (€1.500) ohne Bindung starten — oder direkt in den 90-Tage-Piloten. Zugänge zu Google &amp; Meta freigeben, und wir haben sauberes Tracking und die ersten Bottom-Funnel-Kampagnen innerhalb der ersten zwei Wochen live.</p>
+    <div class="next rv">
+      <div class="ns"><div class="n">01</div><h4>Freigeben &amp; unterschreiben</h4></div>
+      <div class="ns"><div class="n">02</div><h4>Konto-Zugänge erteilen</h4></div>
+      <div class="ns"><div class="n">03</div><h4>Kickoff &amp; erste Kampagnen live</h4></div>
+    </div>
+    <div class="cta-row rv">
+      <a class="btn solid" href="mailto:edi@keinsocial.com?subject=skjur%20%E2%9C%95%20k%26einsocial%20%E2%80%94%20Google%20%26%20Meta%20Partnerschaft">E-Mail an edi@keinsocial.com</a>
+      <a class="btn out" href="https://www.keinsocial.com">keinsocial.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="lock">k<span style="color:var(--pink)">&amp;</span>einsocial <span style="opacity:.5">✕</span> <span style="font-family:var(--serif);font-style:italic;color:var(--gold)">skjur®</span></span>
+    <span>Vertraulich · erstellt Juni 2026 · gültig bis 10. Juli 2026</span>
+    <span><a href="mailto:edi@keinsocial.com">edi@keinsocial.com</a> · <a href="https://www.keinsocial.com">keinsocial.com</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
